@@ -1,7 +1,7 @@
 #include "json.h"
 
 int main() {
-    std::ifstream ifs("./xxx.json");
+    std::ifstream ifs("./emxample_data/xxx.json");
     std::stringstream ss;
     ss << ifs.rdbuf();
     std::string s{ss.str()};
