@@ -1,0 +1,18 @@
+{
+    // header-insetion:是否自动引入头文件
+    // completion-style:设置提示格式
+    // query-driver：设置clangd server的驱动库路径
+    // std：设置c++标准
+    // -I：设置用户自定义的库路径
+    // --target：设置链接目标
+    "clangd.arguments": [
+        "--header-insertion=never",
+        "--completion-style=detailed",
+        "--query-driver=g++"
+    ],
+    "clangd.fallbackFlags": [
+        "-std=c++20",
+        "-I${workspaceFolder}/include",
+        "--target=x86_64-w64-windows-gnu"
+    ]
+}
