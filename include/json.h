@@ -123,7 +123,7 @@ class JsonParser {
         pos_ = endpos;
         static auto is_float = [](std::string& number) {
             return number.find('.') != std::string::npos ||
-                   number.find('.') != std::string::npos;
+                   number.find('e') != std::string::npos;
         };
         try {
             if (is_float(number)) {
@@ -162,10 +162,10 @@ class JsonParser {
             }
             parse_whitespace();
             if (pos_ < json_str_.size() && json_str_[pos_] == ',') {
-                ++pos_;
+                ++pos_;  // ,
             }
         }
-        ++pos_;
+        ++pos_;  // ]
         return arr;
     }
 
